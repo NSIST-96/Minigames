@@ -20,4 +20,8 @@ header{
     min-height: calc(100vh - 220px);
 }
 
+.icon-link{
+    text-decoration: none;
+}
+
 /* FOOTER */
