@@ -1,0 +1,13 @@
+body{
+    padding: 10px;
+}
+/* HEADER */
+
+
+
+/* CONTENT */
+.content{
+    min-height: calc(100vh - 210px);
+}
+
+/* FOOTER */
