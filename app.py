@@ -11,9 +11,9 @@ db = SQLAlchemy(app)
 def home():
     return render_template('menu/home.html')
 
-@app.route("/about")
-def about():
-    return render_template('menu/about.html')
+@app.route("/news")
+def news():
+    return render_template('menu/news.html')
 
 @app.route("/games")
 def games():
