@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block title %} Список игр {% endblock title %}
-{% block content%}
 {% block head %} 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/menu/games.css') }}">
 {% endblock head %}
-<section class="py-5 text-center container">
-    <img id="game_title_image" src="{{ url_for('static', filename='img/minigames_back.png') }}" alt="title">
+{% block content%}
+<section class="py-5 text-center container games-header-text">
+    <img id="game_title_image" src="{{ url_for('static', filename='img/games_title.png') }}" alt="title">
 </section>
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
@@ -13,14 +13,8 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
                 <div class="card shadow-sm">
-                    <img id="games_title_icon" src="{{ url_for('static', filename='img/minigames_icon.jpg') }}" alt="icon">
-                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"></rect>
-                        <text x="50%" y="50%" fill="#eceeef"dy=".3em">Thumbnail</text>
-                    </svg> -->
+                    <img id="games_title_icon" src="{{ url_for('static', filename='img/games_icons/snake.png') }}" alt="icon">
+                    
                     <div class="card-body">
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
@@ -36,14 +30,8 @@
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img id="games_title_icon" src="{{ url_for('static', filename='img/minigames_icon.jpg') }}" alt="icon">
-                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em">Thumbnail</text>
-                    </svg> -->
+                    <img id="games_title_icon" src="{{ url_for('static', filename='img/games_icons/tetris.png') }}" alt="icon">
+                    
                     <div class="card-body">
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
@@ -59,14 +47,8 @@
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img id="games_title_icon" src="{{ url_for('static', filename='img/minigames_icon.jpg') }}" alt="icon">
-                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em">Thumbnail</text>
-                    </svg> -->
+                    <img id="games_title_icon" src="{{ url_for('static', filename='img/games_icons/labyrinth.jpg') }}" alt="icon">
+                    
                     <div class="card-body">
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
@@ -83,14 +65,24 @@
 
             <div class="col">
                 <div class="card shadow-sm">
-                    <img id="games_title_icon" src="{{ url_for('static', filename='img/minigames_icon.jpg') }}" alt="icon">
-                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                            dy=".3em">Thumbnail</text>
-                    </svg> -->
+                    <img id="games_title_icon" src="{{ url_for('static', filename='img/games_icons/clicker.png') }}" alt="icon">
+                    
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-body-secondary">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img id="games_title_icon" src="{{ url_for('static', filename='img/games_icons/minigames_icon.jpg') }}" alt="icon">
                     <div class="card-body">
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
