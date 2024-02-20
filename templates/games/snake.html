@@ -1,1 +1,20 @@
 {% extends 'base.html' %}
+{% block title %} Змейка {% endblock title %}
+{% block head %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu/snake.css') }}">
+{% endblock head %}
+
+{% block content %}
+{{super()}}
+<div id="game">
+    <div class="game-header">
+        <div class="game-score">
+            <span class="score-count">1234</span>
+        </div>
+    </div>
+    <div class="canvas-wrapper">
+        <canvas id="game-canvas" width="800" height="400"></canvas>
+    </div>
+</div>
+<script src="../../static/js/snake.js"></script>
+{% endblock content %}
