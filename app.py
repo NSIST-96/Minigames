@@ -20,5 +20,23 @@ def games():
     return render_template('menu/games.html')
 
 
+@app.route("/games/snake")
+def snake():
+    return render_template('menu/snake.html')
+
+@app.route("/games/tetris")
+def tetris():
+    return render_template('menu/tetris.html')
+
+@app.route("/games/labirint")
+def labirint():
+    return render_template('menu/labirint.html')
+
+@app.route("/games/clicker")
+def clicker():
+    return render_template('menu/clicker.html')
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
