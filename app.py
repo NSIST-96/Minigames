@@ -19,22 +19,21 @@ def news():
 def games():
     return render_template('menu/games.html')
 
-
-@app.route("/games/snake")
+@app.route("/snake")
 def snake():
-    return render_template('menu/snake.html')
+    return render_template('/menu/games/snake.html')
 
-@app.route("/games/tetris")
+@app.route("/tetris")
 def tetris():
-    return render_template('menu/tetris.html')
+    return render_template('/menu/games/tetris.html')
 
-@app.route("/games/labirint")
+@app.route("/labirint")
 def labirint():
-    return render_template('menu/labirint.html')
+    return render_template('menu/games/labirint.html')
 
-@app.route("/games/clicker")
+@app.route("/clicker")
 def clicker():
-    return render_template('menu/clicker.html')
+    return render_template('menu/games/clicker.html')
 
 
 

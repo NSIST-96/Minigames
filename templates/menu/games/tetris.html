@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Змейка {% endblock title %}
+{% block head %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/games/tetris.css') }}">
+{% endblock head %}
+{% block content %}
+<div class="game">
+    <canvas width="320" height="640" id="game"></canvas>
+    <script src="../../static/js/tetris.js"></script>
+</div>
+{% endblock content %}
