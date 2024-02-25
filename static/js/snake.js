@@ -1,5 +1,9 @@
+//табличка для очков
 let scoreBlock;
+//счёт
 let score = 0;
+// флаг конца игры, на старте — неактивный
+let gameOver = false;
 
 const config = {
 	step: 0,
@@ -30,7 +34,7 @@ drawScore();
 
 function gameLoop() {
 
-	requestAnimationFrame( gameLoop );
+	rAF = requestAnimationFrame( gameLoop );
 	if ( ++config.step < config.maxStep) {
 		return;
 	}
@@ -38,10 +42,12 @@ function gameLoop() {
 
 	context.clearRect(0, 0, canvas.width, canvas.height);
 
+	
 	drawBerry();
 	drawSnake();
 }
-requestAnimationFrame( gameLoop );
+
+rAF = requestAnimationFrame(gameLoop);
 
 function drawSnake() {
 	snake.x += snake.dx;
@@ -72,7 +78,7 @@ function drawSnake() {
 		for( let i = index + 1; i < snake.tails.length; i++ ) {
 
 			if ( el.x == snake.tails[i].x && el.y == snake.tails[i].y ) {
-				refreshGame();
+				return showGameOver();
 			}
 
 		}
@@ -147,3 +153,24 @@ document.addEventListener("keydown", function (e) {
 		snake.dy = 0;
 	}
 });
+
+
+// показываем надпись Game Over
+function showGameOver() {
+    // прекращаем всю анимацию игры
+    cancelAnimationFrame(rAF);
+    // ставим флаг окончания
+    gameOver = true;
+    // рисуем чёрный прямоугольник посередине поля
+    context.fillStyle = 'black';
+    context.globalAlpha = 0.75;
+    context.fillRect(0, canvas.height / 2 - 30, canvas.width, 60);
+    // пишем надпись белым моноширинным шрифтом по центру
+    context.globalAlpha = 1;
+    context.fillStyle = 'white';
+    context.font = '36px monospace';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText('GAME OVER!', canvas.width / 2, canvas.height / 2);
+  }
+
