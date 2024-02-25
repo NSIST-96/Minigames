@@ -1,54 +1,64 @@
 {% extends 'base.html' %}
 {% block title %} О сайте {% endblock title %}
 {% block content%}
-{% block head %} 
+{% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/menu/news.css') }}">
 {% endblock head %}
 <main class="container">
-    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-      <div class="col-lg-6 px-0">
-        <h1 class="display-4 fst-italic">Новостной блог</h1>
-        <p class="lead my-3">Здесь отображаются самые свежие новости нашего портала.</p>
-        <!-- <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Оставить отзыв</a></p> -->
-      </div>
+  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+    <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">Новостной блог</h1>
+      <p class="lead my-3">Здесь отображаются самые свежие новости нашего портала.</p>
+      <!-- <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Оставить отзыв</a></p> -->
     </div>
-  
-    <div class="row mb-2">
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary-emphasis">Внимание!!!!</strong>
-            <h3 class="mb-0">Новостной пост</h3>
-            <div class="mb-1 text-body-secondary">Сен 19</div>
-            <p class="card-text mb-auto">Сайт перешёл в состояние нестояния</p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">Первая новость</strong>
+          <h3 class="mb-0">Начало положено</h3>
+          <div class="mb-1 text-body-secondary">Сен 19</div>
+          <p class="card-text mb-auto">Сайт перешёл в состояние beta. Просим всех желающих принять участие и оставить отзыв.</p>
+          <!-- <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
               Continue reading
               <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-            </a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-          </div>
+            </a> -->
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-success-emphasis">Хорошая новость!</strong>
-            <h3 class="mb-0">Новые картинки</h3>
-            <div class="mb-1 text-body-secondary">Сен 20</div>
-            <p class="mb-auto">Сайт оброст красивыми картинками! Заходите посмотреть)</p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-              Continue reading
-              <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-            </a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-          </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img"
+            aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+              dy=".3em">Новость</text>
+          </svg>
         </div>
       </div>
     </div>
-  
-  </main>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success-emphasis">Хорошая новость</strong>
+          <h3 class="mb-0">Новая игра!</h3>
+          <div class="mb-1 text-body-secondary">Сен 20</div>
+          <p class="mb-auto">По вашим просьбам добавлена игра "Dino"! Вперёд набивать очки и наслаждаться новой игрой!</p>
+          <!-- <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+              Continue reading
+              <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+            </a> -->
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img"
+            aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+              dy=".3em">Новость</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
 {% endblock content %}
