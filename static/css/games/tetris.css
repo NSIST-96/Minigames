@@ -1,5 +1,50 @@
 .game{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-score {
+	padding: 10px 15px;
+	min-width: 160px;
+	height: 50px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-speed {
+	padding: 10px 15px;
+	min-width: 160px;
+	height: 50px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.game-info{
+	padding: 2px;
+	background-color: rgb(205, 85, 0);
+	border: 10px;
+	border-color: black;
+	height: 614px;
+}
+
+.score-count{
+	font-size: 3vmin;
+	color: #fdc073;
+	font-weight: bold;
+}
+
+.speed-count{
+	font-size: 3vmin;
+	color: #fdc073;
+	font-weight: bold;
+}
+
+.game-play{
+	margin: 0;
+	padding: 0;
     background-color: black;
-    align-items: center;
-    vertical-align: middle;
 }

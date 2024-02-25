@@ -6,6 +6,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///minigames.db'
 db = SQLAlchemy(app)
 
 
+class Account(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    login = db.Column(db.String(20), nullable=False)
+    password = db.Column(db.String(50), nullable=False)
+
+
 @app.route("/home")
 @app.route("/")
 def home():
@@ -35,7 +41,13 @@ def labirint():
 def clicker():
     return render_template('menu/games/clicker.html')
 
+@app.route("/login")
+def login():
+    return render_template('account/login.html')
 
+@app.route("/registration")
+def registration():
+    return render_template('account/registration.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

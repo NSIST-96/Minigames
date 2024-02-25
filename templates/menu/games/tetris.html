@@ -4,8 +4,21 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/games/tetris.css') }}">
 {% endblock head %}
 {% block content %}
+{{super()}}
 <div class="game">
-    <canvas width="320" height="640" id="game"></canvas>
-    <script src="../../static/js/tetris.js"></script>
+    <div class="game-play">
+        <canvas width="320" height="608" id="game"></canvas>
+    </div>
+    <div class="game-info">
+        <h1>Очки:</h1>
+        <div class="game-score">
+            <span class="score-count">0</span>
+        </div>
+        <h1>Скорость:</h1>
+        <div class="game-speed">
+            <span class="speed-count">1</span>
+        </div>
+    </div>
 </div>
+<script src="../../static/js/tetris.js"></script>
 {% endblock content %}

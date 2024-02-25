@@ -1,18 +1,22 @@
 // получаем доступ к холсту
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
+scoreBlock = document.querySelector(".game-score .score-count");
+speedBlock = document.querySelector(".game-speed .speed-count");
 // размер квадратика
 const grid = 32;
 // массив с последовательностями фигур, на старте — пустой
 let tetrominoSequence = [];
 //счёт очков
 let score = 0;
+//скорость игры
+let speed = 0;
 // с помощью двумерного массива следим за тем, что находится в каждой клетке игрового поля
 // размер поля — 10 на 20, и несколько строк ещё находится за видимой областью
 let playfield = [];
 
 // заполняем сразу массив пустыми ячейками
-for (let row = -2; row < 20; row++) {
+for (let row = -2; row < 19; row++) {
   playfield[row] = [];
 
   for (let col = 0; col < 10; col++) {
@@ -82,7 +86,6 @@ let gameOver = false;
 
 
 // Функция возвращает случайное число в заданном диапазоне
-// https://stackoverflow.com/a/1527820/2124254
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -91,7 +94,6 @@ function getRandomInt(min, max) {
 }
 
 // создаём последовательность фигур, которая появится в игре
-//https://tetris.fandom.com/wiki/Random_Generator
 function generateSequence() {
   // тут — сами фигуры
   const sequence = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
@@ -132,7 +134,6 @@ function getNextTetromino() {
 }
 
 // поворачиваем матрицу на 90 градусов
-// https://codereview.stackexchange.com/a/186834
 function rotate(matrix) {
   const N = matrix.length - 1;
   const result = matrix.map((row, i) =>
@@ -185,7 +186,8 @@ function placeTetromino() {
   for (let row = playfield.length - 1; row >= 0; ) {
     // если ряд заполнен
     if (playfield[row].every(cell => !!cell)) {
-
+      //увеличиваем счётчик очков на один
+      incScore();
       // очищаем его и опускаем всё вниз на одну клетку
       for (let r = row; r >= 0; r--) {
         for (let c = 0; c < playfield[r].length; c++) {
@@ -227,11 +229,11 @@ function placeTetromino() {
 function loop() {
   // начинаем анимацию
   rAF = requestAnimationFrame(loop);
+  drawScore();
   // очищаем холст
   context.clearRect(0,0,canvas.width,canvas.height);
-
   // рисуем игровое поле с учётом заполненных фигур
-  for (let row = 0; row < 20; row++) {
+  for (let row = 0; row < 19; row++) {
     for (let col = 0; col < 10; col++) {
       if (playfield[row][col]) {
         const name = playfield[row][col];
@@ -246,10 +248,10 @@ function loop() {
   // рисуем текущую фигуру
   if (tetromino) {
 
-    // фигура сдвигается вниз каждые 35 кадров
-    if (++count > 35) {
+    // фигура сдвигается вниз каждые 30 кадров
+    if (++count > 30) {
       tetromino.row++;
-      count = 0;
+      count = speed;
 
       // если движение закончилось — рисуем фигуру в поле и проверяем, можно ли удалить строки
       if (!isValidMove(tetromino.matrix, tetromino.row, tetromino.col)) {
@@ -317,6 +319,31 @@ document.addEventListener('keydown', function(e) {
     tetromino.row = row;
   }
 });
+
+//Увеличиваем счётчик списанных линий и отрисовываем всё
+function incScore() {
+	score++;
+  incSpeed();
+	drawScore();
+  drawSpeed();
+}
+
+//отрисовываем счёт
+function drawScore() {
+	scoreBlock.innerHTML = score;
+}
+
+//увеличиваем скорость
+function incSpeed(){
+  if(score%10 == 0 && speed < 40){
+    speed = score/5;
+  }
+}
+
+//отрисовываем скорость
+function drawSpeed() {
+	speedBlock.innerHTML = speed;
+}
 
 // старт игры
 rAF = requestAnimationFrame(loop);

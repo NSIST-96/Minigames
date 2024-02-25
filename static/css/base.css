@@ -17,7 +17,7 @@ header{
 
 /* CONTENT */
 .content{
-    min-height: calc(100vh - 220px);
+    min-height: calc(100vh - 240px);
 }
 
 .icon-link{

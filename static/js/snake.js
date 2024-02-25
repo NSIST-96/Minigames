@@ -49,7 +49,6 @@ function drawSnake() {
 
 	collisionBorder();
 
-	// todo бордер
 	snake.tails.unshift( { x: snake.x, y: snake.y } );
 
 	if ( snake.tails.length > snake.maxTails ) {

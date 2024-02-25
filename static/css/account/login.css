@@ -1,0 +1,21 @@
+.form-signin{
+    padding-top: 100px;
+    min-width: 500px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-floating{
+    min-width: 500px;
+    margin-bottom: 10px;
+}
+
+.btn-group{
+    min-width: 500px;
+}
+
+.btn{
+    margin-right: 5px;
+}
+
