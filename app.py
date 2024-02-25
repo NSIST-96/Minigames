@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///minigames.db'
+app.config['SECRET_KEY'] = 'secretkey'
 db = SQLAlchemy(app)
 
 
@@ -52,6 +53,10 @@ def login():
 @app.route("/registration")
 def registration():
     return render_template('account/registration.html')
+
+@app.route("/account")
+def account():
+    return render_template('account/account.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
