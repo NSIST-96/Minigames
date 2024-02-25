@@ -1,0 +1,91 @@
+.game{
+    width: 800px;
+    height: 400px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.game-play {
+    width: 800px;
+    height: 200px;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+  }
+  
+  #dino {
+    width: 50px;
+    height: 50px;
+    background-image: url(../../img/dino_icons/trex.png);
+    background-color: black;
+    background-size: 50px 50px;
+    position: relative;
+    top: 149px;
+  }
+  
+  .jump {
+    animation: jump 0.3s linear;
+  }
+  
+  @keyframes jump {
+    0% {
+      top: 149px;
+    }
+  
+    30% {
+      top: 129px;
+    }
+  
+    50% {
+      top: 79px;
+    }
+  
+    80% {
+      top: 129px;
+    }
+  
+    100% {
+      top: 149px;
+    }
+  }
+  
+  #cactus {
+    width: 20px;
+    height: 40px;
+    position: relative;
+    top: 109px;
+    left: 580px;
+  
+    background-image: url("../../img/dino_icons/cactus.png");
+    background-color: black;
+    background-size: 20px 40px;
+  
+    animation: block 1s infinite linear;
+  }
+  
+  @keyframes block {
+    0% {
+      left: 800px;
+    }
+  
+    100% {
+      left: -15px;
+    }
+  }
+.game-info{
+    padding: 10px 15px;
+	min-width: 160px;
+	height: 50px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+
+    font-size: 3vmin;
+	color: black;
+	font-weight: bold;
+}
+.score-count{
+    margin-left: 10px;
+	font-size: 3vmin;
+	color: black;
+	font-weight: bold;
+}

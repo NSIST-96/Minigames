@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Платформер {% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/games/dino.css') }}">
+{% endblock head %}
+{% block content %}
+{{super()}}
+<div class="game">
+
+  <div class="game-info">
+    <h3>Очки:</h3>
+    <div class="game-score">
+      <span class="score-count">0</span>
+    </div>
+  </div>
+  
+  <div class="game-play">
+    <div id="dino"></div>
+    <div id="cactus"></div>
+  </div>
+
+</div>
+
+<script src="../../static/js/dino.js"></script>
+{% endblock content %}

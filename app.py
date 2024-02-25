@@ -37,6 +37,10 @@ def tetris():
 def labirint():
     return render_template('menu/games/labirint.html')
 
+@app.route("/dino")
+def dino():
+    return render_template('menu/games/dino.html')
+
 @app.route("/clicker")
 def clicker():
     return render_template('menu/games/clicker.html')
