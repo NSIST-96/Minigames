@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% block title %} Вход в аккаунт {% endblock title %}
 {% block head %} 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/account/login.css') }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 {% endblock head %}
 {% block content%}
 <main class="form-signin w-100 m-auto">
-    <form>
+    <form method="post">
       <!-- <img class="mb-4 account_alt_icon" src="{{ url_for('static', filename='img/account_icons/account_alt.jpg') }}" alt="img"> -->
       <h1 class="h3 mb-3 fw-normal">Вход в аккаунт:</h1>
   
@@ -13,17 +14,18 @@
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Логин</label>
       </div>
+
       <div class="form-floating">
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Пароль</label>
       </div>
   
-      <div class="form-check text-start my-3">
+      <!-- <div class="form-check text-start my-3">
         <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
         <label class="form-check-label" for="flexCheckDefault">
           Запомнить данные
         </label>
-      </div>
+      </div> -->
       <div class="btn-group">
         <a class="btn btn-primary w-100 py-2" type="submit" href="{{ url_for('home')}}">Войти</a>
         <a class="btn btn-primary w-100 py-2" type="submit" href="{{ url_for('registration')}}">Регистрация</a>

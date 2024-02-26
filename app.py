@@ -11,6 +11,10 @@ class Account(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     login = db.Column(db.String(20), nullable=False)
     password = db.Column(db.String(50), nullable=False)
+    snake_record = db.Column(db.Integer)
+    tetris_record = db.Column(db.Integer)
+    dino_record = db.Column(db.Integer)
+    clicker_record = db.Column(db.Integer)
 
 
 @app.route("/home")
@@ -50,9 +54,13 @@ def clicker():
 def login():
     return render_template('account/login.html')
 
-@app.route("/registration")
+@app.route("/registration", methods=['POST', 'GET'])
 def registration():
-    return render_template('account/registration.html')
+    if request.method == 'POST':
+        request.form['text']
+        return redirect('/account')
+    else:
+        return render_template('account/registration.html')
 
 @app.route("/account")
 def account():
