@@ -57,8 +57,16 @@ def login():
 @app.route("/registration", methods=['POST', 'GET'])
 def registration():
     if request.method == 'POST':
-        request.form['text']
-        return redirect('/account')
+        login = request.form['login']
+        password = request.form['password']
+        account = Account(login, password, 10, 10, 10, 10)
+
+        try:
+            db.session.add(account)
+            db.session.commit()
+            return redirect('account/account.html')
+        except:
+            return 'При регистрации возникла ошибка. Попробуйте снова.'
     else:
         return render_template('account/registration.html')
 

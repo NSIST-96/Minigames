@@ -6,21 +6,22 @@
 {% endblock head %}
 {% block content%}
 <main class="form-signin w-100 m-auto">
+  
   <form method="post">
     <h1 class="h3 mb-3 fw-normal">Регистрация:</h1>
-
+    
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Name">
+      <input type="text" name="login" class="form-control" id="floatingInput" placeholder="Name">
       <label for="floatingInput">Логин</label>
     </div>
 
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Пароль</label>
     </div>
 
     <div class="btn-group">
-      <a class="btn btn-primary w-100 py-2" type="submit" href="{{ url_for('home')}}">Создать</a>
+      <bottom class="btn btn-primary w-100 py-2" type="post" href="{{ url_for('home')}}">Создать</bottom>
       <a class="btn btn-primary w-100 py-2" type="submit" href="{{ url_for('login')}}">Назад</a>
     </div>
   </form>
